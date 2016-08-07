@@ -17,6 +17,7 @@ var todoList = {
   },
 
   addTodo: function (todoText) {
+
     this.todos.push({
       todoText: todoText,
       completed: false
@@ -65,9 +66,12 @@ var todoList = {
   }
 };
 
-var displayTodosButton = document.getElementById('displayTodosButton');
-console.log(displayTodosButton);
+var handlers = {
+  displayTodos: function() {
+    todoList.displayTodos();
+  },
 
-displayTodosButton.addEventListener('click', function() {
-  todoList.displayTodos();
-});
+  toggleAll: function() {
+    todoList.toggleAll();
+  },
+};
