@@ -61,7 +61,6 @@ var todoList = {
         this.todos[i].completed = true;
       }
     }
-
     this.displayTodos();
   }
 };
@@ -89,6 +88,17 @@ var handlers = {
     //reset inputs to blank//
     changeTodoPositionInput.value = '';
     changeTodoTextInput.value = '';
+  },
 
+  deleteTodo: function() {
+    var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
+    todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+    deleteTodoPositionInput.value = '';
+  },
+
+  toggleCompleted: function() {
+    var toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
+    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput.value = '';
   }
 };
