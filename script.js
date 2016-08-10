@@ -102,3 +102,16 @@ var handlers = {
     toggleCompletedPositionInput.value = '';
   }
 };
+
+var view = {
+  displayTodos: function() {
+    //Clear the list before displaying to avoid duplicates being created//
+    var todosUl = document.querySelector('ul');
+    todosUl.innerHTML = '';
+
+    for (var i = 0; i< todoList.todos.length; i++) {
+      var todoLi = document.createElement('li');
+      todosUl.appendChild(todoLi);
+    }
+  }
+};
